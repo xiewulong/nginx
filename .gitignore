@@ -1,2 +1,5 @@
-vhost.conf
 *_temp/
+vhost.conf
+*.crt
+*.csr
+*.key
