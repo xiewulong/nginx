@@ -1,5 +1,6 @@
 *_temp/
 vhost.conf
+*.pem
 *.crt
 *.csr
 *.key
