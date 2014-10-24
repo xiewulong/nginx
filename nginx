@@ -1,12 +1,10 @@
 #!/bin/bash
 
-bin=/usr/local/nginx/sbin/nginx
-cfg=-p
-ngx=~/nginx
-pid=${ngx}/logs/nginx.pid
+ngx=`pwd`/`dirname $0`
+pid=${ngx}/nginx.pid
 
 case $1 in
-	start) ${bin} ${cfg} ${ngx} && echo 'nginx is already running.';;
+	start) /usr/local/nginx/sbin/nginx -p ${ngx} && echo 'nginx is already running.';;
 	stop) kill -QUIT `cat ${pid}` && echo 'nginx stops.';;
 	restart | reload) kill -HUP `cat ${pid}` && echo 'nginx reloaded.';;
 	pid) echo `cat ${pid}`;;
