@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ngx=`pwd`/`dirname $0`
+ngx=~/nginx
 pid=${ngx}/logs/nginx.pid
 
 case $1 in
