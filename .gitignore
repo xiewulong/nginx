@@ -1,4 +1,5 @@
 *_temp/
+conf.d/
 vhost.conf
 *.pem
 *.crt
