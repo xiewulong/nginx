@@ -2,12 +2,12 @@ server {
 	listen		80;
 	#listen		[::]:80 default_server ipv6only=on;
 
-	#listen				443 ssl;
-	#ssl_certificate		cert.pem|cert.crt;
+	#listen						443 ssl;
+	#ssl_certificate			cert.pem|cert.crt;
 	#ssl_certificate_key		cert_nopwd.key;
-	#ssl_session_cache		shared:SSL:1m;
+	#ssl_session_cache			shared:SSL:1m;
 	#ssl_session_timeout		5m;
-	#ssl_ciphers			HIGH:!aNULL:!MD5;
+	#ssl_ciphers				HIGH:!aNULL:!MD5;
 	#ssl_prefer_server_ciphers	on;
 
 	server_name	localhost;
@@ -40,10 +40,10 @@ server {
 	#}
 
 	location ~ \.php$ {
-		include		fastcgi.conf;
+		include			fastcgi.conf;
 		fastcgi_pass	127.0.0.1:9000;
 	#	fastcgi_pass	unix:/var/run/php5-fpm.sock;
 	#	fastcgi_param	HTTPS on;
-	#	try_files	$uri =404;
+	#	try_files		$uri =404;
 	}
 }
