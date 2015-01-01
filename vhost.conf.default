@@ -27,10 +27,6 @@ server {
 	#	try_files	$uri =404;
 	#}
 
-	#location ~ /protected/ {
-	#	deny all;
-	#}
-
 	#location ~ /\.(ht|svn|git) {
 	#	deny all;
 	#}
