@@ -2,6 +2,5 @@
 conf.d/
 vhost.conf
 *.pem
-*.crt
 *.csr
 *.key
