@@ -1,5 +1,6 @@
 *_temp/
 conf.d/
+cert.d/
 vhost.conf
 *.pem
 *.csr
