@@ -12,13 +12,15 @@ if [ ! -n "$1" ]; then
 fi
 
 pkey=$1.private.key
+key=$1.key
 
 if [ ! -f "$pkey" ]; then
 	echo "$pkey does not exists"
 	exit 1
 fi
 
-openssl rsa -in $pkey -out $1.key
+openssl rsa -in $pkey -out $key
+echo "Save decrypted key to $key"
 
 crt=$1.crt
 ca=ca.pem
@@ -38,4 +40,5 @@ if [ ! -f "$subca" ]; then
 	wget $startsslcerts$subca
 fi
 
-cat ${ca} ${subca} >> ${crt}
+cat $ca $subca >> $crt
+echo "$ca and $subca contents were combined to $crt"
