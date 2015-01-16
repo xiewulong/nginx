@@ -20,7 +20,7 @@ if [ ! -f "$pkey" ]; then
 fi
 
 openssl rsa -in $pkey -out $key
-echo "Save decrypted key to $key"
+echo "Save $pkey's decrypted key to $key"
 
 crt=$1.crt
 ca=ca.pem
@@ -41,4 +41,4 @@ if [ ! -f "$subca" ]; then
 fi
 
 cat $ca $subca >> $crt
-echo "$ca and $subca contents were combined to $crt"
+echo "Save $ca and $subca contents to $crt"
