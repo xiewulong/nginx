@@ -2,6 +2,7 @@
 conf.d/
 cert.d/
 vhost.conf
-*.pem
-*.csr
 *.key
+*.pem
+*.crt
+*.csr

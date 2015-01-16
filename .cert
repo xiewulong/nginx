@@ -1,4 +1,9 @@
 openssl genrsa -out cert.key
 #openssl rsa -in cert.key -out cert.key
 openssl req -new -key cert.key -out cert.csr
+#openssl req -new -newkey rsa:2048 -nodes -out cert.csr -keyout cert.key
 openssl req -x509 -days 365 -in cert.csr -key cert.key -out cert.pem
+
+wget https://cert.startssl.com/certs/ca.pem
+wget http://cert.startssl.com/certs/sub.class1.server.ca.pem
+cat ca.pem sub.class1.server.ca.pem >> cert.crt
