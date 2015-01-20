@@ -40,5 +40,5 @@ if [ ! -f "$subca" ]; then
 	wget $startsslcerts$subca
 fi
 
-cat $crt $ca $subca > $crt
+cat $ca $subca > $crt
 echo "Save $ca and $subca contents to $crt"
