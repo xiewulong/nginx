@@ -14,7 +14,7 @@ server {
 	root		/path/to/basic;
 	index		index.html index.htm index.php;
 
-	#return		301 http://www.domain.com$request_uri;
+	#return		301 http://$host$request_uri;
 
 	#access_log	/path/to/basic/log/access.log main;
 	#error_log	/path/to/basic/log/error.log;
