@@ -12,7 +12,7 @@ server {
 
 	server_name	localhost;
 	root		/path/to/basic;
-	index		index.html index.htm index.php;
+	#index		index.html index.htm index.php;
 
 	#return		301 http://$host$request_uri;
 
@@ -37,11 +37,22 @@ server {
 	#	add_header	Access-Control-Allow-Origin *;
 	#}
 
-	location ~ \.php$ {
-		include			fastcgi.conf;
-		fastcgi_pass	127.0.0.1:9000;
+	#location ~ \.php$ {
+	#	include			fastcgi.conf;
+	#	fastcgi_pass	127.0.0.1:9000;
 	#	fastcgi_pass	unix:/var/run/php5-fpm.sock;
 	#	fastcgi_param	HTTPS on;
 	#	try_files		$uri =404;
-	}
+	#}
+
+	#location /api/ {
+	#	try_files	@go;
+	#}
+
+	#location @go {
+	#	charset				utf-8;
+	#	proxy_set_header	X-Forwarded-For	$remote_addr;
+	#	proxy_set_header	Host			$http_host;
+	#	proxy_pass			127.0.0.1:90;
+	#}
 }
