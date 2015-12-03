@@ -46,13 +46,13 @@ server {
 	#}
 
 	#location /api/ {
-	#	try_files	@go;
+	#	try_files	$uri @go;
 	#}
 
 	#location @go {
 	#	charset				utf-8;
 	#	proxy_set_header	X-Forwarded-For	$remote_addr;
 	#	proxy_set_header	Host			$http_host;
-	#	proxy_pass			127.0.0.1:90;
+	#	proxy_pass			http://127.0.0.1:90;
 	#}
 }
