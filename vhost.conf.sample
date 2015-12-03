@@ -11,13 +11,13 @@ server {
 	#ssl_prefer_server_ciphers	on;
 
 	server_name	localhost;
-	root		/path/to/basic;
+	#root		/path/to/app;
 	#index		index.html index.htm index.php;
 
 	#return		301 http://$host$request_uri;
 
-	#access_log	/path/to/basic/log/access.log main;
-	#error_log	/path/to/basic/log/error.log;
+	#access_log	/path/to/app/log/access.log main;
+	#error_log	/path/to/app/log/error.log;
 
 	#error_page	404 /404.html;
 
