@@ -22,7 +22,7 @@ server {
 
 	#location / {
 	#	#thinkphp
-	#	if(!-e $request_filename) {
+	#	if (!-e $request_filename) {
 	#	    rewrite    ^(.*)$ /index.php?s=$1 last;
 	#	    break;
 	#	}
