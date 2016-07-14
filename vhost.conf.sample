@@ -29,8 +29,6 @@ server {
 	#	}
 	#	try_files    $uri $uri/ /index.php?$args;	#yii2
 	#	try_files    $uri $uri/ /index.php?_url=$uri&$args;	#phalcon
-	#
-	#
 	#}
 
 	#location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
