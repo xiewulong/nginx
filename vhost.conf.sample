@@ -1,16 +1,16 @@
 server {
-	listen		80;
-	#listen		[::]:80 default_server ipv6only=on;
+	listen	80;
+	#listen	[::]:80 default_server ipv6only=on;
 
-	#listen						443 ssl;
-	#ssl_certificate			cert.crt;
-	#ssl_certificate_key		cert.key;
-	#ssl_session_cache			shared:SSL:1m;
-	#ssl_session_timeout		5m;
-	#ssl_ciphers				HIGH:!aNULL:!MD5;
-	#ssl_prefer_server_ciphers	on;
+	#listen                       443 ssl;
+	#ssl_certificate              cert.crt;
+	#ssl_certificate_key          cert.key;
+	#ssl_session_cache            shared:SSL:1m;
+	#ssl_session_timeout          5m;
+	#ssl_ciphers                  HIGH:!aNULL:!MD5;
+	#ssl_prefer_server_ciphers    on;
 
-	server_name	localhost;
+	server_name	localhost _;
 	#root		/path/to/app;
 	#index		index.html index.htm index.php;
 
@@ -22,11 +22,19 @@ server {
 	#error_page	404 /404.html;
 
 	#location / {
-	#	try_files	$uri $uri/ /index.php?$args;
+	#	#thinkphp
+	#	if(!-e $request_filename) {
+	#	    rewrite    ^(.*)$ /index.php?s=$1 last;
+	#	    break;
+	#	}
+	#	try_files    $uri $uri/ /index.php?$args;	#yii2
+	#	try_files    $uri $uri/ /index.php?_url=$uri&$args;	#phalcon
+	#
+	#
 	#}
 
 	#location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
-	#	try_files	$uri =404;
+	#	try_files    $uri =404;
 	#}
 
 	#location ~ /\.(ht|svn|git) {
@@ -34,32 +42,30 @@ server {
 	#}
 	
 	#location ~ \.(eot|woff|ttf|svg|otf)$ {
-	#	add_header	Access-Control-Allow-Origin *;
+	#	add_header    Access-Control-Allow-Origin *;
 	#}
 
 	#location ~ \.php$ {
-	#	include			fastcgi.conf;
-	#	fastcgi_pass	127.0.0.1:9000;
-	#	fastcgi_pass	unix:/var/run/php5-fpm.sock;
-	#	fastcgi_param	HTTPS on;
-	#	try_files		$uri =404;
+	#	include         fastcgi.conf;
+	#	fastcgi_pass    127.0.0.1:9000;
+	#	fastcgi_pass    unix:/var/run/php5-fpm.sock;
 	#}
 
 	#location / {
-	#	proxy_pass			http://$host;
-	#	proxy_set_header	Host			$http_host;
-	#	proxy_set_header	X-Real-IP		$remote_addr;
-	#	proxy_set_header	X-Forwarded-For	$proxy_add_x_forwarded_for;
+	#	proxy_pass          http://$host;
+	#	proxy_set_header    Host               $http_host;
+	#	proxy_set_header    X-Real-IP          $remote_addr;
+	#	proxy_set_header    X-Forwarded-For    $proxy_add_x_forwarded_for;
 	#}
 
 	#location /api {
-	#	try_files	$uri @go;
+	#	try_files    $uri @go;
 	#}
 
 	#location @go {
-	#	proxy_pass			http://127.0.0.1:90;
-	#	proxy_set_header	Host			$http_host;
-	#	proxy_set_header	X-Real-IP		$remote_addr;
-	#	proxy_set_header	X-Forwarded-For	$proxy_add_x_forwarded_for;
+	#	proxy_pass          http://127.0.0.1:90;
+	#	proxy_set_header    Host               $http_host;
+	#	proxy_set_header    X-Real-IP          $remote_addr;
+	#	proxy_set_header    X-Forwarded-For    $proxy_add_x_forwarded_for;
 	#}
 }
