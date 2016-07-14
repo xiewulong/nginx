@@ -1,7 +1,4 @@
 server {
-	listen	80;
-	#listen	[::]:80 default_server ipv6only=on;
-
 	#listen                       443 ssl;
 	#ssl_certificate              cert.crt;
 	#ssl_certificate_key          cert.key;
@@ -10,9 +7,11 @@ server {
 	#ssl_ciphers                  HIGH:!aNULL:!MD5;
 	#ssl_prefer_server_ciphers    on;
 
+	listen		80 default_server;
+
 	server_name	localhost _;
-	#root		/path/to/app;
-	#index		index.html index.htm index.php;
+	root		/path/to/app;
+	index		index.html index.htm index.php;
 
 	#return		301 http://$host$request_uri;
 
