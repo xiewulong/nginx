@@ -34,9 +34,9 @@ server {
 	#	try_files    $uri =404;
 	#}
 
-	#location ~ /\.(ht|svn|git) {
-	#	deny all;
-	#}
+	location ~ /\.(ht|svn|git) {
+		deny all;
+	}
 	
 	#location ~ \.(eot|woff|ttf|svg|otf)$ {
 	#	add_header    Access-Control-Allow-Origin *;
