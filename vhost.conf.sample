@@ -20,6 +20,18 @@ server {
 
 	#error_page	404 /404.html;
 
+	location ~ /\.(ht|svn|git) {
+		deny all;
+	}
+
+	#location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
+	#	try_files    $uri =404;
+	#}
+	
+	#location ~ \.(eot|woff|ttf|svg|otf)$ {
+	#	add_header    Access-Control-Allow-Origin *;
+	#}
+
 	#location / {
 	#	#thinkphp
 	#	if (!-e $request_filename) {
@@ -28,18 +40,6 @@ server {
 	#	}
 	#	try_files    $uri $uri/ /index.php?$args;	#yii2
 	#	try_files    $uri $uri/ /index.php?_url=$uri&$args;	#phalcon
-	#}
-
-	#location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
-	#	try_files    $uri =404;
-	#}
-
-	location ~ /\.(ht|svn|git) {
-		deny all;
-	}
-	
-	#location ~ \.(eot|woff|ttf|svg|otf)$ {
-	#	add_header    Access-Control-Allow-Origin *;
 	#}
 
 	#location ~ \.php$ {
