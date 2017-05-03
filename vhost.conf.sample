@@ -1,72 +1,72 @@
 server {
 
-	# listen                      443;
+  # listen                      443;
   # ssl                         on;
-	# ssl_certificate             cert.crt;
-	# ssl_certificate_key         cert.key;
-	# ssl_ciphers                 ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA;
-	# ssl_session_cache           shared:SSL:50m;
-	# ssl_session_timeout         5m;
-	# ssl_prefer_server_ciphers   on;
-	# ssl_protocols               TLSv1 TLSv1.1 TLSv1.2;
+  # ssl_certificate             cert.crt;
+  # ssl_certificate_key         cert.key;
+  # ssl_ciphers                 ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA;
+  # ssl_session_cache           shared:SSL:50m;
+  # ssl_session_timeout         5m;
+  # ssl_prefer_server_ciphers   on;
+  # ssl_protocols               TLSv1 TLSv1.1 TLSv1.2;
 
-	listen        80 default_server;
+  listen        80 default_server;
 
-	server_name   localhost _;
-	root          /path/to/app;
-	index         index.html index.htm index.php;
+  server_name   localhost _;
+  root          /path/to/app;
+  index         index.html index.htm index.php;
 
-	# return      301 http://$host$request_uri;
+  # return      301 http://$host$request_uri;
 
-	# access_log  /path/to/app/log/access.log main;
-	# error_log   /path/to/app/log/error.log;
+  # access_log  /path/to/app/log/access.log main;
+  # error_log   /path/to/app/log/error.log;
 
-	# error_page	404 /404.html;
+  # error_page	404 /404.html;
 
-	location ~ /\.(ht|svn|git) {
-		deny all;
-	}
+  location ~ /\.(ht|svn|git) {
+    deny all;
+  }
 
-	# location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
-	# 	try_files     $uri =404;
-	# }
+  # location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
+  #   try_files     $uri =404;
+  # }
 
-	# location ~ \.(eot|woff|ttf|svg|otf)$ {
-	# 	add_header    Access-Control-Allow-Origin *;
-	# }
+  # location ~ \.(eot|woff|ttf|svg|otf)$ {
+  #   add_header    Access-Control-Allow-Origin *;
+  # }
 
-	# location / {
-	# 	# thinkphp
-	# 	if (!-e $request_filename) {
-	# 	    rewrite   ^(.*)$ /index.php?s=$1 last;
-	# 	    break;
-	# 	}
-	# 	try_files   $uri $uri/ /index.php?$args; # yii2
-	# 	try_files   $uri $uri/ /index.php?_url=$uri&$args; # phalcon
-	# }
+  # location / {
+  #   # thinkphp
+  #   if (!-e $request_filename) {
+  #       rewrite   ^(.*)$ /index.php?s=$1 last;
+  #       break;
+  #   }
+  #   try_files   $uri $uri/ /index.php?$args; # yii2
+  #   try_files   $uri $uri/ /index.php?_url=$uri&$args; # phalcon
+  # }
 
-	# location ~ \.php$ {
-	# 	include         fastcgi.conf;
-	# 	fastcgi_pass    127.0.0.1:9000;
-	# 	fastcgi_pass    unix:/var/run/php5-fpm.sock;
-	# }
+  # location ~ \.php$ {
+  #   include         fastcgi.conf;
+  #   fastcgi_pass    127.0.0.1:9000;
+  #   fastcgi_pass    unix:/var/run/php5-fpm.sock;
+  # }
 
-	# location / {
-	# 	proxy_pass          http://$host;
-	# 	proxy_set_header    Host               $http_host;
-	# 	proxy_set_header    X-Real-IP          $remote_addr;
-	# 	proxy_set_header    X-Forwarded-For    $proxy_add_x_forwarded_for;
-	# }
+  # location / {
+  #   proxy_pass          http://$host;
+  #   proxy_set_header    Host               $http_host;
+  #   proxy_set_header    X-Real-IP          $remote_addr;
+  #   proxy_set_header    X-Forwarded-For    $proxy_add_x_forwarded_for;
+  # }
 
-	# location /api {
+  # location /api {
   #   try_files   $uri @go;
-	# }
+  # }
 
-	# location @go {
-	# 	proxy_pass          http://127.0.0.1:90;
-	# 	proxy_set_header    Host              $http_host;
-	# 	proxy_set_header    X-Real-IP         $remote_addr;
-	# 	proxy_set_header    X-Forwarded-For   $proxy_add_x_forwarded_for;
-	# }
+  # location @go {
+  #   proxy_pass          http://127.0.0.1:90;
+  #   proxy_set_header    Host              $http_host;
+  #   proxy_set_header    X-Real-IP         $remote_addr;
+  #   proxy_set_header    X-Forwarded-For   $proxy_add_x_forwarded_for;
+  # }
 
 }
