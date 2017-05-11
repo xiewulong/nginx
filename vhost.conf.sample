@@ -1,5 +1,4 @@
 server {
-
   # listen                      443;
   # ssl                         on;
   # ssl_certificate             cert.crt;
@@ -21,18 +20,18 @@ server {
   # access_log  /path/to/app/log/access.log main;
   # error_log   /path/to/app/log/error.log;
 
-  # error_page	404 /404.html;
+  # error_page  404 /404.html;
 
   location ~ /\.(ht|svn|git) {
     deny all;
   }
 
   # location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
-  #   try_files     $uri =404;
+  #   try_files   $uri =404;
   # }
 
   # location ~ \.(eot|woff|ttf|svg|otf)$ {
-  #   add_header    Access-Control-Allow-Origin *;
+  #   add_header  Access-Control-Allow-Origin *;
   # }
 
   # location / {
@@ -46,16 +45,16 @@ server {
   # }
 
   # location ~ \.php$ {
-  #   include         fastcgi.conf;
-  #   fastcgi_pass    127.0.0.1:9000;
-  #   fastcgi_pass    unix:/var/run/php5-fpm.sock;
+  #   include       fastcgi.conf;
+  #   fastcgi_pass  127.0.0.1:9000;
+  #   fastcgi_pass  unix:/var/run/php5-fpm.sock;
   # }
 
   # location / {
-  #   proxy_pass          http://$host;
-  #   proxy_set_header    Host               $http_host;
-  #   proxy_set_header    X-Real-IP          $remote_addr;
-  #   proxy_set_header    X-Forwarded-For    $proxy_add_x_forwarded_for;
+  #   proxy_pass        http://$host;
+  #   proxy_set_header  Host              $http_host;
+  #   proxy_set_header  X-Real-IP         $remote_addr;
+  #   proxy_set_header  X-Forwarded-For   $proxy_add_x_forwarded_for;
   # }
 
   # location /api {
