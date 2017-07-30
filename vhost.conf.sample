@@ -22,6 +22,11 @@ server {
 
   # error_page  404 /404.html;
 
+  # passenger_enabled on;
+  # passenger_ruby node;
+  # passenger_app_type node;
+  # passenger_startup_file app.js;
+
   location ~ /\.(ht|svn|git) {
     deny all;
   }
