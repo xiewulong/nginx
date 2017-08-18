@@ -38,8 +38,10 @@ http {
     #client_max_body_size  60m;
     #gzip_disable   'MSIE [1-6]\.(?!.*SV1)';
 
-    #passenger_root /usr/local/passenger;
-    #passenger_ruby /usr/local/ruby;
+    #passenger_root   /usr/local/passenger;
+    #passenger_ruby   /usr/local/ruby/bin/ruby;
+    #passenger_node   /usr/local/node/bin/node;
+    #passenger_python /usr/bin/python;
 
     include   ../*.conf;
     include   ../conf.d/*.conf;
