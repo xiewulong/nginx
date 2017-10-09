@@ -23,6 +23,8 @@ server {
   #error_page    404 /404.html;
 
   #passenger_enabled        on;
+  #passenger_user           username;
+  #passenger_group          groupname;
   #passenger_base_uri       /base/uri;
   #passenger_app_root       /path/to/app/root;
   #passenger_document_root  /path/to/document/root;
