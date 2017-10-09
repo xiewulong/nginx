@@ -22,14 +22,17 @@ server {
 
   #error_page    404 /404.html;
 
-  #passenger_enabled         on;
-  #passenger_base_uri        /base/uri;
-  #passenger_app_root        /path/to/app/root;
-  #passenger_document_root   /path/to/document/root;
-  #passenger_app_env         production;
-  #passenger_app_type        node;
-  #passenger_startup_file    app.js;
-  #passenger_restart_dir     tmp;
+  #passenger_enabled        on;
+  #passenger_base_uri       /base/uri;
+  #passenger_app_root       /path/to/app/root;
+  #passenger_document_root  /path/to/document/root;
+  #passenger_app_env        production;
+  #passenger_app_type       node;
+  #passenger_startup_file   app.js;
+  #passenger_restart_dir    tmp;
+  #passenger_env_var        DATABASE_HOST     localhost;
+  #passenger_env_var        DATABASE_USERNAME root;
+  #passenger_env_var        DATABASE_PASSWORD root;
 
   location ~ /\.(ht|svn|git) {
     deny all;
