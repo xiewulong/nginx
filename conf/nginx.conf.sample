@@ -45,4 +45,5 @@ http {
 
     include   ../*.conf;
     include   ../conf.d/*.conf;
+    #include   /home/www/nginx/conf.d/*.conf;
 }
