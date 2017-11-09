@@ -1,7 +1,6 @@
 #!/bin/bash
 
 dir=$(cd `dirname $0`; pwd)
-#ngx=~/nginx
 pid=${dir}/logs/nginx.pid
 
 case $1 in
