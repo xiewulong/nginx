@@ -29,13 +29,12 @@ http {
   sendfile    on;
   #tcp_nopush  on;
 
-  #keepalive_timeout   0;
-  keepalive_timeout   65;
+  #keepalive_timeout   75s;
 
   #gzip          on;
   #gzip_disable  'MSIE [1-6]\.(?!.*SV1)';
 
-  #client_max_body_size  60m;
+  #client_max_body_size  1m;
 
   #passenger_root    /usr/local/passenger;
   #passenger_ruby    /usr/local/ruby/bin/ruby;
