@@ -33,6 +33,7 @@ http {
 
   #gzip          on;
   #gzip_disable  'MSIE [1-6]\.(?!.*SV1)';
+  #gzip_types    *;
 
   #client_max_body_size  1m;
 
