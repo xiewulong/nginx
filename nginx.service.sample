@@ -1,5 +1,5 @@
 [Unit]
-Description=www http service
+Description=Nginx
 After=network.target
 
 [Service]
