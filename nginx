@@ -4,9 +4,9 @@ dir=$(cd `dirname $0`; pwd)
 pid=${dir}/logs/nginx.pid
 
 case $1 in
-	start) /usr/local/nginx/sbin/nginx -p ${dir} && echo 'nginx is already running.';;
-	stop) kill -QUIT `cat ${pid}` && echo 'nginx stops.';;
-	restart | reload) kill -HUP `cat ${pid}` && echo 'nginx reloaded.';;
-	pid) echo `cat ${pid}`;;
-	*) echo "Usage: $0 {start|stop|restart|reload|pid}"; exit 1;;
+  start) /usr/local/nginx/sbin/nginx -p ${dir} && echo 'nginx is already running.';;
+  stop) kill -QUIT `cat ${pid}` && echo 'nginx stops.';;
+  restart | reload) kill -HUP `cat ${pid}` && echo 'nginx reloaded.';;
+  pid) echo `cat ${pid}`;;
+  *) echo "Usage: $0 {start|stop|restart|reload|pid}"; exit 1;;
 esac

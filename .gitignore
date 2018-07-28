@@ -1,8 +1,8 @@
 *_temp/
-conf.d/
 cert.d/
-vhost.conf
-*.key
-*.pem
+conf.d/
 *.crt
 *.csr
+*.key
+*.pem
+vhost.conf

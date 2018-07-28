@@ -7,8 +7,8 @@
 #openssl req -x509 -days 365 -in cert.csr -key cert.key -out cert.crt
 
 if [ ! -n "$1" ]; then
-	echo "Usage: $0 {filename}"
-	exit 1
+  echo "Usage: $0 {filename}"
+  exit 1
 fi
 
 key=$1.key
@@ -16,8 +16,8 @@ pkey=$key.private
 
 
 if [ ! -f "$pkey" ]; then
-	echo "$pkey does not exists"
-	exit 1
+  echo "$pkey does not exists"
+  exit 1
 fi
 
 openssl rsa -in $pkey -out $key
@@ -30,16 +30,16 @@ subca=sub.class1.server.ca.pem
 startsslcerts=http://cert.startssl.com/certs/
 
 if [ ! -f "$bcrt" ]; then
-	echo "$bcrt does not exists"
-	exit 1
+  echo "$bcrt does not exists"
+  exit 1
 fi
 
 if [ ! -f "$ca" ]; then
-	wget $startsslcerts$ca
+  wget $startsslcerts$ca
 fi
 
 if [ ! -f "$subca" ]; then
-	wget $startsslcerts$subca
+  wget $startsslcerts$subca
 fi
 
 cat $bcrt $ca $subca > $crt
