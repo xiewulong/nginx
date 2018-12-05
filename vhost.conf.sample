@@ -26,7 +26,7 @@ server {
   root          /path/to/app;
   index         index.html index.htm index.php;
 
-  #return        301 http://$host$request_uri;
+  #return        301 http://$http_host$request_uri;
 
   #access_log    /path/to/app/log/access.log main;
   #error_log     /path/to/app/log/error.log;
