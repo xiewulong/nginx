@@ -1,4 +1,5 @@
 upstream backend {
+  #fair;
   #ip_hash;
 
   server backend1.example.com       weight=5;
