@@ -1,13 +1,13 @@
-upstream upstream_backend {
-  #fair;
-  #ip_hash;
-
+upstream backend_cluster {
   server backend1.example.com       weight=5;
   server backend2.example.com:8080;
   server unix:/tmp/backend3;
 
   server backup1.example.com:8080   backup;
   server backup2.example.com:8080   backup;
+
+  #fair;
+  #ip_hash;
 }
 
 server {
@@ -86,7 +86,7 @@ server {
   #}
 
   #location /backend {
-  #  proxy_pass        http://upstream_backend;
+  #  proxy_pass        http://backend_cluster;
   #  proxy_set_header  Host              $http_host;
   #  proxy_set_header  Upgrade           $http_upgrade;
   #  proxy_set_header  X-Forwarded-For   $proxy_add_x_forwarded_for;
